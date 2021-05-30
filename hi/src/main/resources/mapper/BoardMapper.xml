@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!--        //매퍼의 인터페이스를 구현-->
+<mapper namespace="hello.hi.mapper.BoardMapper">
+
+    <select id="getBoardList" resultType="hello.hi.DTO.BoardDTO">
+        SELECT * FROM boardList
+        ORDER BY no
+    </select>
+
+
+</mapper>

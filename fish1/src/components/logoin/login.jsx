@@ -4,7 +4,7 @@ import First from './first/first';
 import Last from './last/last';
 import styles from './login.module.css';
 
-const Login = ({ authService }) => {
+const Login = ({ authService, onLogout }) => {
   const history = useHistory();
   const goToMain = (userId) => {
     history.push({
@@ -25,9 +25,9 @@ const Login = ({ authService }) => {
   });
   return (
     <section>
-      <First />
+      <First onLogout={onLogout} />
       <section>
-        <h1 className={styles.login}>Logoin</h1>
+        <h1 className={styles.login}>Login</h1>
         <ul className={styles.list}>
           <li className={styles.item}>
             <button className={styles.button} onClick={onLogin}>

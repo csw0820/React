@@ -4,7 +4,7 @@ import styles from './home.module.css';
 const Home = () => (
   <section className={styles.home}>
     <div className="home_container">
-      <img src="/imgs/fish/ship.jpg" alt="poto" className={styles.home__avatar} />
+      <img id="home" src="/imgs/fish/ship.jpg" alt="poto" className={styles.home__avatar} />
     </div>
     <h1 className={styles.home__title}>
       안녕하세요 <br />

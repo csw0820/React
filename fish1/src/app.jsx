@@ -1,44 +1,29 @@
-import React, { component, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Header from './components/header/header';
 import Home from './components/home/home';
 import Info from './components/info/info';
-import Licensee from './components/licensee/licensee';
+import License from './components/license/license';
 import Login from './components/logoin/login';
-import Message from './components/message/message';
-import Potoreview from './components/potoreview/potoreview';
+import Weather from './components/weather/weather';
+import Photoreview from './components/photoreview/photoreview';
 import styles from './app.module.css';
-import { BrowserRouter, Route, Switch, useHistory } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch, useHistory, useLocation } from 'react-router-dom';
+import Main from './components/Main';
 
 function App({ authService }) {
-  const history = useHistory();
-  const onLogout = () => {
-    authService.logout();
-  };
+  // const [scrollY, setScrollY] = useState(0);
 
-  useEffect(() => {
-    authService.onAuthChange((user) => {
-      if (!user) {
-        history.push('/');
-      }
-    });
-  });
+  // useEffect(() => {
+  //   window.addEventListener('scroll', () => setScrollY(window.pageYOffset));
+  //   return window.removeEventListener('scroll', () => setScrollY(window.pageYOffset));
+  // });
 
   return (
-    <div>
+    <div className={styles.app}>
       <BrowserRouter>
         <Switch>
-          <Route exact path="/">
-            <div className={styles.app}>
-              <Login authService={authService} />
-            </div>
-          </Route>
-          <Route path="/main">
-            <Header onLogout={onLogout} />
-            <Home />
-            <Info />
-            <Potoreview />
-            <Message />
-            <Licensee />
+          <Route path="/" exact>
+            <Main authService={authService} />
           </Route>
         </Switch>
       </BrowserRouter>

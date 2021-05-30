@@ -4,12 +4,14 @@ import './index.css';
 import App from './app';
 import '@fortawesome/fontawesome-free/js/all.js';
 import AuthService from './service/auth_service';
+import { ContextProvider } from './Context';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const authService = new AuthService();
 ReactDOM.render(
-  <React.StrictMode>
+  <ContextProvider>
     <App authService = {authService} />
-  </React.StrictMode>,
+  </ContextProvider>,
   document.getElementById('root')
 );
 
