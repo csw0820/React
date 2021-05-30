@@ -2,6 +2,12 @@ h1 {
     margin-top: 70px;
 }
 
+.photo_review {
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+
 
 .photo_review_categories {
     display: flex;
@@ -64,9 +70,11 @@ h1 {
 
 
 .box_container {
+    
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: auto;
 
 }
 
